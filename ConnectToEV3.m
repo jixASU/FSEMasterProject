@@ -7,6 +7,7 @@ end
 %global key
 amIDeadYet = 1;
 
+%%fix code below
 while brick.TouchPressed(1) == 0
     pause(0.01)
     %%switch key
