@@ -1,10 +1,10 @@
 # FSEMasterProject
 
 Devs:
-  \nJohn Ixcoy\n
-  Aarush Murari\n
-  Sebastian Fargos\n
-  Renee Cardoza Leon\n 
+- John Ixcoy
+- Aarush Murari
+- Sebastian Fargos
+- Renee Cardoza Leon
 
 Tasks:
-  \nWin battle bot competition for extra credit
+1. Win battle bot competition for extra credit
