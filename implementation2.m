@@ -7,30 +7,54 @@ InitKeyboard();
 y = -50
 stopCar = false;
 threshold = 25;
+brick.SetColorMode(4,2);
+
 while stopCar == false
     
     %Move forward
-    %brick.MoveMotor('AD', -50);
-    
+    brick.MoveMotor('AD', -50);
+    color = brick.ColorCode(4);
+    display(color)
+    if (color == 5)
+        brick.StopMotor('AD')
+        pause(1)
+    elseif (color == 2)
+        brick.StopMotor('AD')
+        pause(.1)
+        brick.beep()
+        pause(.1)
+        brick.beep
+        pause(.8)
+        break
+    elseif (color == 3)
+        brick.StopMotor('AD')
+        pause(.1)
+        brick.beep()
+        pause(.1)
+        brick.beep
+        pause(.1)
+        brick.beep()
+        pause(.7)
+        break
+    end
     %save distance
     distance = brick.UltrasonicDist(2);
 
- 
-%The following lines auto adjust our motors by reading from the distance sensor (on the left side of the car)
-%Too far, and the left motor slow down
-%Too close, and the right motor slows down
-if (distance >= 60)
+
+    
+if (distance >= 80)
     brick.StopMotor('AD');
         pause(.5)
         brick.MoveMotor('AD', -50);
 
         % Turn Left
         
-        pause(.5)
-        brick.MoveMotor('A', 50);
-        brick.MoveMotor('D', -50);
         pause(.75)
-
+        if (distance >= 80)
+            brick.MoveMotor('A', 50);
+            brick.MoveMotor('D', -50);
+            pause(.75)
+        end
         % Kill motor
         brick.StopMotor('AD');
         pause(.01);
