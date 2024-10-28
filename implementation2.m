@@ -16,7 +16,9 @@ while stopCar == false
     distance = brick.UltrasonicDist(2);
 
  
-    
+%The following lines auto adjust our motors by reading from the distance sensor (on the left side of the car)
+%Too far, and the left motor slow down
+%Too close, and the right motor slows down
 if (distance >= 60)
     brick.StopMotor('AD');
         pause(.5)
