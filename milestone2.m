@@ -2,12 +2,17 @@
 %move cables if not going straight
 
 global key
+
+%an array of all colors with their number attached
 colorDestinationArr = ["0" "1" "2" "3" "4" "5" "6" "7"; "NaN" "Black" "Blue" "Green" "Yellow" "Red" "White" "Brown"];
 
 if (~exist('colorDestination', 'var'))
+    %var does not exist bro
     global colorDestination 
+    %default color is blue
     colorDestination = "blue";
 elseif isempty(colorDestination)
+    %blank value so default is blue
     colorDestination = "blue"
 end
 InitKeyboard();
@@ -17,6 +22,7 @@ stopCar = false;
 threshold = 19.5;
 brick.SetColorMode(4,2);
 
+%matches colorDestination with an item in colorDestinationArray to see what the color is and what value it's associated with.
 for i = 1 : 1 : 8
     colorz = upper(colorDestinationArr(2,i))
     colorDestination = upper(colorDestination)
