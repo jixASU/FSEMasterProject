@@ -47,11 +47,12 @@ while stopCar == false
         brick.MoveMotor('A', 0);
         brick.MoveMotor('D', 0);
         pause(.5)
+        %if we see gap, move forward a litte bit
         brick.MoveMotor('A', -50);
         brick.MoveMotor('D', -50);
         pause(1)
         distance = brick.UltrasonicDist(2);
-      
+        %if we still se a gap, actually turn
         if (distance > threshold)
             % Turns, stops, then goes straight a bit
             brick.MoveMotor('A', 50);
