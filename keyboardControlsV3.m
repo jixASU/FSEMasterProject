@@ -1,9 +1,19 @@
+%{
+Cable for wheelchair grabber gets in the way (not needed rn so toher than
+that other bugs:
+
+button turns can be iffy (the bot doesn;t give iself enough room to bump
+into a wall. Instead, bot should adjust both ways.
+%}
+
+
+
 brick.SetColorMode(1, 4)
 global key
 InitKeyboard();
 
-stopCar = true;
-threshold = 85;
+stopCar = false;
+threshold = 82;
 
 %list of cors with their associated number
 colorDestinationArr = ["0" "1" "2" "3" "4" "5" "6" "7"; "NaN" "Black" "Blue" "Green" "Yellow" "Red" "White" "Brown"];
@@ -49,7 +59,7 @@ end
 while (~stopCar)
     % Move forward
     brick.MoveMotor('AC', -50);
-    brick.beep();e
+    %brick.beep();
     % Save the color it sees
     color = brick.ColorCode(4);
     
@@ -64,18 +74,22 @@ while (~stopCar)
     
     if (distance > threshold)
         brick.MoveMotor('AC', 0);
-        pause(.5)
+        pause(.5) %stop motor and pause for .5 seconds
+
         %if we see gap, move forward a litte bit
         brick.MoveMotor('AC', -50);
-        pause(1)
+        pause(1.25)%time increased form 1 to 1.25 to actually allow bot to turn
+                        %without this, bot gets caught in walls while turning
         distance = brick.UltrasonicDist(2);
 
         %if we still se a gap, actually turn
         if (distance > threshold)
+            brick.MoveMotor('C', -50);
+            pause(.25)
             % Turns, stops, then goes straight a bit
             brick.MoveMotor('A', 50);
             brick.MoveMotor('C', -50);
-            pause(.85);
+            pause(.85); 
             brick.MoveMotor('AC', -20);
         end
       
@@ -116,15 +130,16 @@ while (1)
         case 'w'
             disp('scopper up');
             brick.MoveMotor('D', 5);
-        case 3
+        case 'd'
             disp('scopper up');
-            brick.MoveMotor('D', 5);
+            brick.MoveMotor('D', 10);
         case 'a'
             disp('scooper down');
-            brick.MoveMotor('D', -5);
+            brick.MoveMotor('D', -10);
         case 's'
             disp('scooper down');
             brick.MoveMotor('D', -5);
+        
         case 'e'
             stopCar = false;
             disp('break');
