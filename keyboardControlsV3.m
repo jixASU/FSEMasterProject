@@ -4,6 +4,11 @@ that other bugs:
 
 button turns can be iffy (the bot doesn;t give iself enough room to bump
 into a wall. Instead, bot should adjust both ways.
+
+
+(34+(6/30.01)) seconds for 11 rotations; 34.1999333555 seconds or about 34.2
+3.1090848505 for 1 rotation or about 3.1 seconds
+
 %}
 
 
