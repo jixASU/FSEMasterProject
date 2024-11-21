@@ -72,7 +72,7 @@ while (~stopCar)
     
    %plz keep car doesn't always turn exactly 90 degress
    
-    if distance < 40   %if our wall is within a reasonable distance, autocorrect
+    if distance < 47   %if our wall is within a reasonable distance, autocorrect
                        %(40 might be is too far, so probalby something closer)
         while true    %it's needed and we break the loop at specific conditions.plz don't change or whole code breals
         
