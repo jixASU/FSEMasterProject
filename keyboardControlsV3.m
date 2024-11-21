@@ -27,7 +27,8 @@ colorDestinationArr = ["0" "1" "2" "3" "4" "5" "6" "7"; "NaN" "Black" "Blue" "Gr
 
 %check of global variable for starting destination exists
 if (~exist('colorStart', 'var')) %if not, make it
-    global colorStart = "green";
+    global colorStart;
+    colorStart = "green"
 elseif isempty(colorStart) % if empty, give it something
     colorStart = "green"
 end
@@ -42,7 +43,8 @@ end
 
 
 if (~exist('colorDestination', 'var'))
-    global colorDestination = "blue";
+    global colorDestination;
+    colorDestination = "blue"
 elseif isempty(colorDestination)
     colorDestination = "blue";
 end
