@@ -8,7 +8,7 @@ Devs:
 
 Tasks:
 1. ~~Win battle bot competition for extra credit~~ ❌ (brick malfunctioned)
-2. Get the bot to move byitself ❌ (kinda but still some bugs)
+2. Get the bot to move byitself ❌ (almost there)
 3. ~~Get the wheelchar pick-up mehcanism to work~~ ☑
 4. ~~Keyboard control~~ ☑
 
