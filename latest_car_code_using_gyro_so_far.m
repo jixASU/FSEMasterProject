@@ -17,11 +17,9 @@ Fix motors as car turns away from right wall (withotu autocorrecting immediately
 %}
 
 %gryo can always be buggy unless we ensure that a new brick variable is delcared before hand
-if exist("brick")
-    clear("brick");
-    global brick; %The following line was added without actually testing anything. Making it global shouldn;t do much, but there is a slight possibility it might be a bug. Please comment it out if you find it to be buggy.
-    brick = ConnectBrick("EV3KLM");
-end
+clear("brick");
+global brick; %The following line was added without actually testing anything. Making it global shouldn;t do much, but there is a slight possibility it might be a bug. Please comment it out if you find it to be buggy.
+brick = ConnectBrick("EV3KLM");
 
 
 
